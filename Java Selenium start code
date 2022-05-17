@@ -1,0 +1,35 @@
+package TestMaven;
+
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+
+public class TestClass {
+	 WebDriver driver;
+	
+//	 @BeforeTest
+//	 public void  test() throws FileNotFoundException {
+//	        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe" );
+//	        driver = new ChromeDriver();
+//	        driver.manage().window().maximize();
+////	        PrintWriter printer=new PrintWriter(("Allinall.txt"));
+////	        printer.println("| SiteName      |   Partner    | Page No     | Page Ratio  |  Api Ratio | Difference |");
+////	        printer.println("| :------------ |--------------| :-----------| ----------: |------------|------------|\n");
+//
+//
+//	    }
+	 
+	@Test
+	public void firstMethod() {
+		 System.setProperty("webdriver.chrome.driver", "D:\\chromedriver-101.exe" );
+	        driver = new ChromeDriver();
+	        driver.manage().window().maximize();
+		driver.get("https://qa1.orbundsis.com/einstein-freshair/administrator_frameset.jsp");
+		
+	}
+	 
+}
