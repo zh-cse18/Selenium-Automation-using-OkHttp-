@@ -1,35 +1,33 @@
-package TestMaven;
+package firstPackage;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
 
-
-public class TestClass {
-	 WebDriver driver;
-	
-//	 @BeforeTest
-//	 public void  test() throws FileNotFoundException {
-//	        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe" );
-//	        driver = new ChromeDriver();
-//	        driver.manage().window().maximize();
-////	        PrintWriter printer=new PrintWriter(("Allinall.txt"));
-////	        printer.println("| SiteName      |   Partner    | Page No     | Page Ratio  |  Api Ratio | Difference |");
-////	        printer.println("| :------------ |--------------| :-----------| ----------: |------------|------------|\n");
-//
-//
-//	    }
+public class FirstClass {
+	WebDriver driver;
 	 
-	@Test
+	@Test(enabled=true)
 	public void firstMethod() {
 		 System.setProperty("webdriver.chrome.driver", "D:\\chromedriver-101.exe" );
 	        driver = new ChromeDriver();
 	        driver.manage().window().maximize();
 		driver.get("https://qa1.orbundsis.com/einstein-freshair/administrator_frameset.jsp");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("test.admin41");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("test41-hassan");
+		driver.findElement(By.xpath("//*[@id=\"frmlogin\"]/div/table/tbody/tr[3]/td[2]/select/option[4]")).click();
 		
+//		driver.findElement(By.xpath("//input[@id='loginBtn']")).click();
+		driver.findElement(By.name("B3")).click();
+
 	}
-	 
+	@AfterTest(enabled=false)
+	public void afterTest()
+	{
+		driver.quit();
+	}
+
 }
+
