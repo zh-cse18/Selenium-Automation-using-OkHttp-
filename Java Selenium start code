@@ -15,8 +15,8 @@ public class FirstClass {
 	        driver = new ChromeDriver();
 	        driver.manage().window().maximize();
 		driver.get("https://qa1.orbundsis.com/einstein-freshair/administrator_frameset.jsp");
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("test.admin41");
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("test41-hassan");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("user name");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("pass");
 		driver.findElement(By.xpath("//*[@id=\"frmlogin\"]/div/table/tbody/tr[3]/td[2]/select/option[4]")).click();
 		
 //		driver.findElement(By.xpath("//input[@id='loginBtn']")).click();
